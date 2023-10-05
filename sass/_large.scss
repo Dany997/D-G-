@@ -1,4 +1,8 @@
 @media (min-width: 992px) {
+	h1.company-name {
+		font-size: 6rem;
+	}
+
 	.header {
 		grid-template-rows: auto repeat(2, 1fr);
 
@@ -62,23 +66,39 @@
 
 		&-desktop {
 			display: block;
-            border-bottom:  1px solid rgba($color: #d6c78e, $alpha: 1.0);
+			border-bottom: 1px solid rgba($color: #d6c78e, $alpha: 1);
 			// color: $white;
-		
+		}
+		&__link {
+			color: $white;
 
-
-        }
-	&__link{
-        color: $white;
-
-
-
-    }
-    
-    
-    }
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: '';
+				width: 100%;
+				height: 100%;
+				border: 1px solid $gold;
+				opacity: 0;
+			}
+			&:hover::before {
+				animation: pulse 1s;
+			}
+		}
+	}
 	.hamburger {
 		display: none;
 		padding: 1em;
+	}
+}
+
+@media (min-width: 1200px) {
+	.header {
+		&__text {
+			p {
+				font-size: 2.2rem;
+			}
+		}
 	}
 }
